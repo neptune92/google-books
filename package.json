@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/neptune92/google-books/issues"
   },
-  "homepage": "https://github.com/neptune92/google-books#readme"
+  "homepage": "https://github.com/neptune92/google-books#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.14",
+    "nodemon": "^2.0.7",
+    "routes": "^2.1.0"
+  }
 }
