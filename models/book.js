@@ -19,12 +19,12 @@ const bookSchema = new Schema ({
         },
 
         image: {
-            String,
+            type: String,
             required: true
         },
 
         link: {
-            String,
+            type: String,
             required: true
         }
 });
