@@ -20,12 +20,16 @@ if (process.env.NODE_ENV === "production") {
 
 
 //Mongo DB
-let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/google-books";
-
-mongoose.connect(MONGODB_URI, {
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/google-books',
+  {
+    useNewUrlParser: true,
     useUnifiedTopology: true,
-    useNewUrlParser: true
-});
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
+
 
 
 app.listen(PORT, () => {
