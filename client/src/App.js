@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./Components/Navbar/navbar";
 import Jumbotron from "./Components/Jumbotron/jumbotron";
 import SearchBooks from "./pages/searchBooks";
-
+import SavedBooks from "./pages/savedBooks";
 
 function App() {
   return (
@@ -11,7 +11,10 @@ function App() {
       <div>
         <Navbar/>
         <Jumbotron/>
+        <Switch>
         <Route exact path="/" component={SearchBooks} />
+        <Route exact path="/save" component={SavedBooks} />
+        </Switch>
       </div>
     </Router>
   )
