@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import API from "../utils/API";
-import Form from '../Components/Form/form';
 import Navbar from "../Components/Navbar/navbar";
-
+import Jumbotron from '../Components/Jumbotron/jumbotron';
 
 
 class SavedBooks extends Component {
@@ -30,10 +29,11 @@ class SavedBooks extends Component {
 
     render() {
         return (
-            <Form>
+            <div>
                 <Navbar/>
-                
-            </Form>
+                <Jumbotron/>
+                </div>
+            
         )
     }
 }
