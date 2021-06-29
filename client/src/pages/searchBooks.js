@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import API from "../utils/API";
-import Jumbotron from "../Components/Jumbotron";
-import Navbar from '../Components/Navbar/navbar';
-import SearchBar from '../Components/Searchbar/Searchbar';
+import Form from '../Components/Form/form';
 
 class SearchBooks extends Component {
     state = {
@@ -30,10 +28,11 @@ class SearchBooks extends Component {
 
     render() {
         return (
-            
-            <Navbar></Navbar>
-
-            <Jumbotron></Jumbotron>
+           <div>
+               <Form>
+                   
+               </Form>
+           </div>
             
         )
     }
