@@ -15,7 +15,7 @@ class SearchBooks extends Component {
     };
 
     componentDidMount() {
-        this.searchBook();
+        this.searchBook("Junji Ito");
     }
 
     bookStuff = bookData => {

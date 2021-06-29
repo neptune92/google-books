@@ -5,7 +5,7 @@ export default {
         return axios.get("https://www.googleapis.com/books/v1/volumes?q="+book);
     },
 
-    getBookss: function() {
+    searchBook: function() {
         return axios.get("/api/books");
     },
 
