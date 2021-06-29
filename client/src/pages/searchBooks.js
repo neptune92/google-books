@@ -52,12 +52,14 @@ class SearchBooks extends Component {
         return (
             <div>
                 <Navbar/>
+                <div class="container">
+                <br/>
                 <Jumbotron/>
                 <Searchbar/>
-                
                 <Card>
                     <BookInfo books={this.state.books}/>
                 </Card>
+                </div>
             </div>
         )
     }

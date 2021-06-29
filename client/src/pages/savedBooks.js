@@ -17,16 +17,30 @@ class SavedBooks extends Component {
             .catch(err => console.error(err));
     }
 
+    handleSave = book => {
+        if (this.state.saveBook.map(book.id).includes(book.id)) {
+            API.deleteBook(book.id)
+                .then(deleteBook => this.setState({ saveBook: this.state.saveBook.filter(book => book.id !== deleteBook.id)}))
+                .catch(err => console.error(err));
+        } else {
+            API.saveBook(book)
+                .then(savedBook => this.setState({ savedBooks: this.state.savedBooks.concat([savedBook]) }))
+                .catch(err => console.error(err));
+        }
+    }
+
     render() {
         return (
             
             <div>
                 <Navbar/>
+                <div class="container">
+                <br/>
                 <Jumbotron/>
-                
                 <Card>
                 <BookInfo books={this.state.saveBook} />
                 </Card>
+                </div>
             </div>
         )
     }
