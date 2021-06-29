@@ -6,7 +6,7 @@ function Jumbotron()
     return(
     <div class="jumbotron">
     <div class="container">
-        <h1>jumbotron Holder</h1>
+        <h1>React Google Books</h1>
     </div>
 </div>
 )

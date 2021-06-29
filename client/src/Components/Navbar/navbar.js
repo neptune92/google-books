@@ -1,14 +1,19 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Navbar() {
     return (
         <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Google Books</a>
+      <Link class="brand-logo" to="/">Google Books</Link>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        
+        <li><Link to="/">
+          Search
+        </Link></li>
+        <li><Link to="/save">
+          Saved Books
+        </Link></li>
       </ul>
     </div>
   </nav>
