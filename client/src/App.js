@@ -1,14 +1,12 @@
 import './App.css';
-import Navbar from './Components/Navbar/navbar';
-import Jumbotron from './Components/Jumbotron/jumbotron';
+import SearchBooks from './pages/searchBooks';
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      
       <header className="App-header">
 
-        <Jumbotron/>
         
         <p>
           Edit <code>src/App.js</code> and save to reload.
