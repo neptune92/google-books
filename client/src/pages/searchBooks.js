@@ -3,43 +3,67 @@ import API from "../utils/API";
 import Navbar from '../Components/Navbar/navbar';
 import Searchbar from "../Components/Searchbar/searchbar";
 import Jumbotron from '../Components/Jumbotron/jumbotron';
+import Card from '../Components/Card/card';
+import BookInfo from '../Components/BookInfo/BookInfo';
+
 
 
 class SearchBooks extends Component {
     state = {
-        book: [],
-        search: ""
+        value:"",
+        books: []
     };
 
-    handleInputChange = (event) => {
-        event.preventDefault();
-        const { name, value } = event.target;
+    componentDidMount() {
+        this.searchBook();
+    }
+
+    bookStuff = bookData => {
+        return {
+            id: bookData.id,
+            title: bookData.volumeInfo.title,
+            authors: bookData.volumeInfo.authors,
+            description: bookData.volumeInfo.description,
+            image: bookData.volumeInfo.imageLinks.thumbnail,
+            link: bookData.volumeInfo.previewLink
+        }
+    }
+
+    searchBook = query => {
+        API.getBook(query)
+            .then(res => this.setState({ books: res.data.items.map(bookData => this.bookStuff(bookData))}))
+            .catch(err => console.error(err));
+    };
+
+    handleInputChange = event => {
+        const name = event.target.name;
+        const value = event.target.value;
         this.setState({
             [name]: value
-        })
+        });
     };
 
-    handleFormSubmit = (event) => {
+    handleFormSubmit = event => {
         event.preventDefault();
-        this.getBooks();
+        this.searchBook(this.state.search);
     };
-
-    handleSaving = savedBook => {
-        API.saveBook(savedBook)
-            .then(res => console.log(res));
-    }
 
     render() {
         return (
-        <div>
-            <Navbar/>
-            <Jumbotron/>
-            <Searchbar/>
-        </div>
-            
+            <div>
+                <Navbar/>
+                <Jumbotron/>
+                <Searchbar/>
+                
+                <Card>
+                    <BookInfo books={this.state.books}/>
+                </Card>
+            </div>
         )
     }
-    
 }
+
+    
+
 
 export default SearchBooks;

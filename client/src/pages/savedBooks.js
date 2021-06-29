@@ -2,38 +2,32 @@ import React, { Component } from 'react';
 import API from "../utils/API";
 import Navbar from "../Components/Navbar/navbar";
 import Jumbotron from '../Components/Jumbotron/jumbotron';
+import BookInfo from '../Components/BookInfo/BookInfo';
+import Card from '../Components/Card/card';
 
 
 class SavedBooks extends Component {
     state = {
-        book: []
-    };
-
-    componentDidMount() {
-        this.saveBook();
+        saveBook: [],
     }
 
-    saveBook = () => {
+    componentDidMount() {
         API.saveBook()
-            .then((res) => 
-            this.setState({
-                book: res.data,
-            })
-            )
-            .catch((err) => console.log(err));
-    };
-
-    handleDeleteBooks = (id) => {
-        API.deleteBook(id).then((res) => this.saveBook());
-    };
+            .then(saveBook => this.setState({ saveBook: saveBook }))
+            .catch(err => console.error(err));
+    }
 
     render() {
         return (
+            
             <div>
                 <Navbar/>
                 <Jumbotron/>
-                </div>
-            
+                
+                <Card>
+                <BookInfo books={this.state.saveBook} />
+                </Card>
+            </div>
         )
     }
 }
