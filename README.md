@@ -12,7 +12,7 @@
     Google Books API
 
   ## Images
-   ![Search](C:\Users\angel\google-books\client\src\images\layout.PNG)
+   ![Search](\client\src\images\layout.PNG)
 
   ## Contributing
   Always room for people to contribute.
