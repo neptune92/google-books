@@ -6,8 +6,6 @@ import Jumbotron from '../Components/Jumbotron/jumbotron';
 import Card from '../Components/Card/card';
 import BookInfo from '../Components/BookInfo/BookInfo';
 
-
-
 class SearchBooks extends Component {
     state = {
         value:"",

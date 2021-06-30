@@ -1,4 +1,14 @@
 .jumbotron {
     padding: 100px;
-    background: url('../../images/jumbotronBooks.png');
+    background: url('../../images/bookjumbo.jpg');
+
+}
+
+header {
+    font-size: 80px;
+    color: aliceblue;
+}
+
+h3 {
+    text-align: center;
 }

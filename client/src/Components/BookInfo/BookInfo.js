@@ -30,9 +30,12 @@ class BookInfo extends Component {
         return (
             <div>
                 {!this.props.books.length ? (
-                    <h1 className="text-center">Search for Books</h1>
+                    <h1 className="text-center"></h1>
                 ) : (
-                    <div>
+                    <div class="container">
+                        <div>
+                            <h2>Results</h2>
+                        </div>
                     {this.props.books.map(result => (
                         <div className="card mb-3" key={result._id}>
                             <div className="row">
@@ -44,11 +47,11 @@ class BookInfo extends Component {
                                     <h5 className="card-title">{result.title} by {result.authors}</h5>
                                     <p className="card-text">{result.description}</p>
                                     <div>
-                                    <a href={result.link} className="btn badge-pill btn-outline-dark mt-3" target="_blank" >
+                                    <a href={result.link} className="btn indigo darken-1" target="_blank" >
                                         View
                                         </a>
-                                    <button onClick={this.props.handleSave} className="btn btn-info save-">
-                                        {this.state.saveBook.map(book => book._id).includes(result._id) ? "Unsave" : "Save"}
+                                    <button onClick={this.props.handleButtonClick} className="btn indigo darken-4">
+                                        {this.state.saveBook.map(book => book.id).includes(result._id) ? "Unsave" : "Save"}
                                         </button>
                                             </div>
                                     </div>

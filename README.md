@@ -11,6 +11,9 @@
     Node
     Google Books API
 
+  ## Images
+    ![image info](./images/layout.png)
+
   ## Contributing
   Always room for people to contribute.
 
