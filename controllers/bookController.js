@@ -1,5 +1,4 @@
 const db = require("../models");
-const db = require("../models");
 
 module.exports = {
     //find all saved books
