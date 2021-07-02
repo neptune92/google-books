@@ -50,8 +50,9 @@ class BookInfo extends Component {
                                     <a href={result.link} className="btn indigo darken-1" target="_blank" >
                                         View
                                         </a>
+
                                     <button onClick={this.props.handleButtonClick} className="btn indigo darken-4">
-                                        {this.state.saveBook.map(book => book.id).includes(result._id) ? "Unsave" : "Save"}
+                                        {this.state.saveBook.map(book => book.id).includes(result.id) ? "Unsave" : "Save"}
                                         </button>
                                             </div>
                                     </div>
